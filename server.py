@@ -1,3 +1,5 @@
+'''socket programming
+'''
 import socket
 
 server = socket.socket() #network socket object 
