@@ -7,12 +7,13 @@ print('Socket created')
 
 server.bind(('127.0.0.1',5001))  #binding ip & port to create socket
 
+# one can pass n number of clients inside listen() method. e.g. socket.listen(3)
 server.listen() #listen incoming connections
 print('Waiting for connections...')
 
 while True:
     client_port, address  = server.accept() #accept from incoming connection
-    print('Connected with',address, client_port)
+    print('Connected with',address, client_port) # prints the ip adress and port number of a client
     
     client_port.send(bytes('Welcome...','utf-8')) #converting msg to bytes utf-8 format & sending
     client_port.close() 
